@@ -1,0 +1,154 @@
+:root {
+  --main-color: #F44336;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #232323;
+  display: grid;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  place-items: center;
+}
+
+.circle {
+  height: 100px;
+  width: 100px;
+  background-image: linear-gradient(var(--main-color), #232323, #232323, #232323);
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  opacity: 0.6;
+  border-radius: 50%;
+  margin-top: 30px;
+  display: grid;
+  place-items: center;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.circle::after {
+  content: '';
+  position: relative;
+  background-color: green;
+  width: 95%;
+  height: 85%;
+  border-radius: 50%;
+  background-color: #232323;
+  animation-name: size;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes size {
+  0% {
+    height: 99%;
+    width: 99%;
+  }
+
+  50% {
+    width: 80%;
+  }
+
+  100% {
+    height: 99%;
+    width: 99%;
+  }
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 50px 0;
+  width: 80%;
+}
+
+.form-item {
+  margin: 5px 0;
+  background-color: #232323;
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  line-height: 2;
+  padding: 5px;
+  font-size: 1rem;
+  color: #cdcdcd;
+  text-align: center;
+  transition: opacity 1s;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.dn {
+  display: none;
+}
+
+.form-item:focus {
+  box-shadow: 0 0 2px var(--main-color);
+}
+
+.title, .sub {
+  text-align: center;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.sub {
+  font-size: 1.2rem;
+}
+
+:focus {
+  outline: none;
+}
+
+.group {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+  transition: all 1s ease;
+}
+
+.btn {
+  color: #cdcdcd;
+  background-color: var(--main-color);
+  border: none;
+  border: 1px solid var(--main-color);
+}
+
+.hide {
+  opacity: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+::-webkit-scrollbar {
+  z-index: 30;
+  width: 8px
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1d1d1d;
+  border-left: 1px solid #000;
+  border-radius: 4px
+}
+
+::-webkit-scrollbar-track {
+  background: #000
+}
